@@ -1,0 +1,22 @@
+natural_questions:
+  # Real Google search queries + Wikipedia answers
+  # CC BY-SA 3.0 license
+  huggingface_id: "google-research-datasets/natural_questions"
+  use_simplified: true
+  splits:
+    - train
+    - validation
+  # max_rows: cap each split before writing Parquet.
+  # Full NQ train = 307k records but raw Arrow = ~184 GB.
+  # 50k gives good coverage without blowing disk.
+  max_rows: 50000
+  # Only load these 3 columns when reading Parquet.
+  # NQ rows also contain document.html (~500 KB each) which the mapper
+  # never uses; skipping it drops peak RAM from ~25 GB to ~300 MB.
+  read_columns:
+    - id
+    - question
+    - annotations
+  include_no_answer: false
+  license: "cc-by-sa-3.0"
+  attribution_template: "https://ai.google.com/research/NaturalQuestions"

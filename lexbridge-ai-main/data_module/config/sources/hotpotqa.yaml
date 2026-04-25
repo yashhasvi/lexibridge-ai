@@ -1,0 +1,15 @@
+hotpotqa:
+  # Multi-hop reasoning QA — requires 2 Wikipedia paragraphs per question
+  # CC BY-SA 4.0 license
+  huggingface_id: "hotpot_qa"
+  config: "fullwiki"           # fullwiki (open-domain) vs distractor (top-k context)
+  splits:
+    - train
+    - validation
+  # Fields: id, question, answer, type, level, supporting_facts, context
+  include_levels:              # difficulty levels
+    - easy
+    - medium
+    - hard
+  license: "cc-by-sa-4.0"
+  attribution_template: "https://hotpotqa.github.io"

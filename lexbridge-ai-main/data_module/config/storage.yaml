@@ -1,0 +1,46 @@
+storage:
+  data_root: ./data
+
+  # Parquet archive — partitioned by source + year
+  parquet:
+    canonical_dir: ${data_root}/processed/canonical
+    chunks_dir: ${data_root}/processed/chunks
+    partition_cols:
+      - source
+      - year
+    compression: zstd
+
+  # DuckDB — analytics over Parquet
+  duckdb:
+    db_path: ${data_root}/processed/analytics.duckdb
+    read_only: false
+    memory_limit: "4GB"
+    threads: 4
+
+  # LanceDB — hot vector index
+  lance:
+    db_path: ${data_root}/index/vectors
+    table_name: chunks
+    metric: cosine             # cosine | l2 | dot
+    num_partitions: 256        # IVF partitions; scale with dataset size
+    num_sub_vectors: 96        # PQ sub-vectors
+
+  # SQLite — pipeline state, ID mappings
+  sqlite:
+    db_path: ${data_root}/processed/pipeline_state.db
+
+  # Graph — NetworkX (dev) or Neo4j (prod)
+  graph:
+    backend: neo4j             # networkx | neo4j
+    networkx_path: ${data_root}/index/graph/graph.pkl.gz
+    # Neo4j settings
+    neo4j_uri: bolt://localhost:7687
+    neo4j_user: neo4j
+    neo4j_password: ${NEO4J_PASSWORD}
+
+  # --------------------------------------------------------------------------
+  # FUTURE OPTION: SQLite adjacency tables (no extra service)
+  # If Neo4j is too heavy for a deployment, store nodes/edges as indexed
+  # SQLite tables.  Use recursive CTEs for multi-hop traversals.
+  # See plan: rag_production_optimization_gaps_849d9872
+  # --------------------------------------------------------------------------

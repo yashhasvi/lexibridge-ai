@@ -1,0 +1,39 @@
+/* index.css — base reset & fonts, everything else in App.css */
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Geist", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html[data-theme="dark"],
+html[data-theme="dark"] body {
+  background: #0f172a;
+  color: #f1f5f9;
+}
+
+html[data-theme="light"],
+html[data-theme="light"] body {
+  background: #f7f9fb;
+  color: #0f172a;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}

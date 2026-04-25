@@ -1,0 +1,24 @@
+wikidata:
+  dump_base_url: "https://dumps.wikimedia.org/wikidatawiki/entities"
+  # latest-all.json.bz2 is ~100 GB compressed — can filter to smaller subsets
+  dump_filename: "latest-all.json.bz2"
+  # Filter entity types to keep (empty = all)
+  # Recommended: keep only items with English labels + at least one sitelink
+  min_sitelinks: 1
+  require_english_label: true
+  # Properties to extract as triples
+  properties_to_extract:
+    - P31    # instance of
+    - P279   # subclass of
+    - P17    # country
+    - P131   # located in
+    - P18    # image (skip large values)
+    - P21    # sex or gender
+    - P106   # occupation
+    - P569   # date of birth
+    - P570   # date of death
+    - P856   # official website
+    - P18    # image
+    - P1566  # GeoNames ID (for linking)
+    - P244   # Library of Congress ID (for linking)
+  license: "cc0"

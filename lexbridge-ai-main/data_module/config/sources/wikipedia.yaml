@@ -1,0 +1,24 @@
+wikipedia:
+  # Wikimedia dump via Hugging Face streaming — no full ~20 GB Arrow cache needed.
+  # wikimedia/wikipedia 20231101.en has ~6.7M articles; we take a subset.
+  huggingface_id: "wikimedia/wikipedia"
+  config: "20231101.en"
+  splits:
+    - train
+  # streaming: true = iterate HF dataset without downloading/caching to disk.
+  # Stops cleanly after max_rows rows have been written to Parquet.
+  streaming: true
+  # 100k articles gives excellent coverage; each row is ~4 KB of text.
+  # Peak memory: ~400 MB while flushing. Disk: ~500 MB Parquet.
+  max_rows: 100000
+  # Wikipedia article fields used by WikipediaMapper (id, title, text, url).
+  # read_columns is a no-op in streaming mode but kept for consistency.
+  read_columns:
+    - id
+    - title
+    - text
+    - url
+  min_article_length: 200
+  language: "en"
+  license: "cc-by-sa-4.0"
+  attribution_template: "https://en.wikipedia.org/wiki/{title}"

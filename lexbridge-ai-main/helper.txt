@@ -1,0 +1,1 @@
+https://huggingface.co/ai4bharat/indic-conformer-600m-multilingual - use this for local languages

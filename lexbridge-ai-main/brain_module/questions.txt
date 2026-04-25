@@ -1,0 +1,23 @@
+# Brain Module — Test Questions
+# Lines starting with # are ignored. One question per line.
+
+# ── Factual (fast_rag only, low complexity) ───────────────────────────────────
+What is virtual memory in operating systems?
+What is a process scheduler?
+What is a file system?
+What is a deadlock in concurrent programming?
+What is the difference between a thread and a process?
+
+# ── Conceptual (moderate complexity) ──────────────────────────────────────────
+How does a CPU cache improve performance?
+What are the trade-offs between monolithic and microkernel architectures?
+How does copy-on-write work in operating systems?
+What is the role of an inode in a Unix file system?
+How does TCP ensure reliable data delivery?
+
+# ── Analytical / multi-hop (graph_rag + LightRAG) ─────────────────────────────
+Compare optimistic and pessimistic concurrency control in databases.
+What are the trade-offs between consistency and availability in distributed systems?
+How do distributed file systems handle fault tolerance and replication?
+Explain the relationship between memory management and process isolation.
+How does garbage collection interact with operating system memory management?

@@ -1,0 +1,36 @@
+stackexchange:
+  # Use the April 2024 Internet Archive mirror — predates the LLM-training gate
+  # Do NOT use the profile-gated download at stackoverflow.com/settings (LLM restriction)
+  archive_base_url: "https://archive.org/download/stackexchange"
+  # List of sites to download (empty = all ~200 sites)
+  # Sizes of 7z archives (must fit on disk before extraction):
+  #   stackoverflow ~22 GB, math ~6 GB, serverfault/superuser ~3-4 GB each,
+  #   askubuntu ~2.5 GB — skip all of these to stay within disk budget.
+  # The sites below total ~1.3 GB compressed, safe with ~17 GB free.
+  sites:
+    - ai.stackexchange.com               # ~45 MB
+    - cs.stackexchange.com               # ~115 MB
+    - datascience.stackexchange.com      # ~82 MB
+    - softwareengineering.stackexchange.com  # ~198 MB
+    - unix.stackexchange.com             # ~798 MB
+  # Fields to extract from Posts.xml
+  post_fields:
+    - Id
+    - PostTypeId
+    - AcceptedAnswerId
+    - ParentId
+    - CreationDate
+    - Score
+    - ViewCount
+    - Body
+    - OwnerUserId
+    - Title
+    - Tags
+    - AnswerCount
+    - LastEditDate
+  # PostTypeId values: 1=Question, 2=Answer
+  min_question_score: -5       # Filter out very low quality
+  min_answer_score: -3
+  include_comments: false       # Comments add noise; set true to include
+  license: "cc-by-sa-4.0"      # Posts >= 2018-05-02
+  attribution_template: "https://stackoverflow.com/q/{id}"
