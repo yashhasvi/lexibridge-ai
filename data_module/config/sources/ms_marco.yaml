@@ -1,0 +1,16 @@
+ms_marco:
+  # MS MARCO passage QA — CC BY 4.0 for Q&A pairs
+  # Must accept Microsoft dataset terms at msmarco.org (research framing)
+  huggingface_id: "microsoft/ms_marco"
+  config: "v2.1"
+  splits:
+    - train
+    - validation
+  # max_rows: MS MARCO train has 1M+ queries; cap to keep disk usage sane.
+  max_rows: 100000
+  min_answer_length: 5
+  only_has_answer: true
+  license: "cc-by-4.0"
+  attribution_template: "https://microsoft.github.io/msmarco/"
+  # NOTE: underlying document rights disclaimed by Microsoft
+  # Use for research framing; check terms at msmarco.org before commercial use

@@ -1,0 +1,11 @@
+triviaqa:
+  # Trivia QA with web + Wikipedia evidence — Apache 2.0 license
+  huggingface_id: "mandarjoshi/trivia_qa"
+  config: "rc.wikipedia"       # rc.wikipedia, rc.web, unfiltered.nocontext
+  splits:
+    - train
+    - validation
+  # Fields: question_id, question, answer, entity_pages, search_results
+  include_evidence: true       # include evidence documents alongside QA pair
+  license: "apache-2.0"
+  attribution_template: "https://nlp.cs.washington.edu/triviaqa/"

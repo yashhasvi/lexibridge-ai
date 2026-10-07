@@ -1,0 +1,1007 @@
+.
+├── audio
+│   ├── __init__.py
+│   ├── __main__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── chunk.cpython-310.pyc
+│   │   └── transcribe.cpython-310.pyc
+│   ├── chunk.py
+│   ├── demo
+│   ├── requirements.txt
+│   └── transcribe.py
+├── brain_module
+│   ├── ask.py
+│   ├── brain_module
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   └── __init__.cpython-314.pyc
+│   │   ├── aggregation
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── __init__.cpython-314.pyc
+│   │   │   │   ├── deduplicator.cpython-310.pyc
+│   │   │   │   ├── deduplicator.cpython-314.pyc
+│   │   │   │   ├── deduplicator.cpython-37.pyc
+│   │   │   │   ├── rrf_merger.cpython-310.pyc
+│   │   │   │   ├── rrf_merger.cpython-314.pyc
+│   │   │   │   ├── source_grouper.cpython-310.pyc
+│   │   │   │   └── source_grouper.cpython-314.pyc
+│   │   │   ├── deduplicator.py
+│   │   │   ├── rrf_merger.py
+│   │   │   └── source_grouper.py
+│   │   ├── api
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── __init__.cpython-314.pyc
+│   │   │   │   ├── audio_routes.cpython-310.pyc
+│   │   │   │   ├── audio_routes.cpython-314.pyc
+│   │   │   │   ├── audio_routes.cpython-37.pyc
+│   │   │   │   ├── main.cpython-310.pyc
+│   │   │   │   ├── main.cpython-314.pyc
+│   │   │   │   └── main.cpython-37.pyc
+│   │   │   ├── audio_routes.py
+│   │   │   └── main.py
+│   │   ├── cache
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── __init__.cpython-314.pyc
+│   │   │   │   ├── embedding_cache.cpython-310.pyc
+│   │   │   │   ├── embedding_cache.cpython-314.pyc
+│   │   │   │   ├── query_cache.cpython-310.pyc
+│   │   │   │   ├── query_cache.cpython-314.pyc
+│   │   │   │   ├── semantic_cache.cpython-310.pyc
+│   │   │   │   └── semantic_cache.cpython-314.pyc
+│   │   │   ├── embedding_cache.py
+│   │   │   ├── query_cache.py
+│   │   │   └── semantic_cache.py
+│   │   ├── compression
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── __init__.cpython-314.pyc
+│   │   │   │   ├── sentence_compressor.cpython-310.pyc
+│   │   │   │   └── sentence_compressor.cpython-314.pyc
+│   │   │   └── sentence_compressor.py
+│   │   ├── evaluation
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── __init__.cpython-314.pyc
+│   │   │   │   ├── ragas_eval.cpython-310.pyc
+│   │   │   │   └── ragas_eval.cpython-314.pyc
+│   │   │   └── ragas_eval.py
+│   │   ├── guardrails
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── __init__.cpython-314.pyc
+│   │   │   │   ├── llm_judge.cpython-314.pyc
+│   │   │   │   ├── response_validator.cpython-310.pyc
+│   │   │   │   ├── response_validator.cpython-314.pyc
+│   │   │   │   ├── retrieval_filter.cpython-310.pyc
+│   │   │   │   └── retrieval_filter.cpython-314.pyc
+│   │   │   ├── llm_judge.py
+│   │   │   ├── response_validator.py
+│   │   │   └── retrieval_filter.py
+│   │   ├── query
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── __init__.cpython-314.pyc
+│   │   │   │   ├── rewriter.cpython-310.pyc
+│   │   │   │   └── rewriter.cpython-314.pyc
+│   │   │   └── rewriter.py
+│   │   ├── reranking
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── __init__.cpython-314.pyc
+│   │   │   │   ├── cross_encoder.cpython-310.pyc
+│   │   │   │   └── cross_encoder.cpython-314.pyc
+│   │   │   └── cross_encoder.py
+│   │   ├── response
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── __init__.cpython-314.pyc
+│   │   │   │   ├── formatter.cpython-310.pyc
+│   │   │   │   ├── formatter.cpython-314.pyc
+│   │   │   │   ├── schema.cpython-310.pyc
+│   │   │   │   └── schema.cpython-314.pyc
+│   │   │   ├── formatter.py
+│   │   │   └── schema.py
+│   │   ├── retrieval
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── __init__.cpython-314.pyc
+│   │   │   │   ├── fetcher_registry.cpython-310.pyc
+│   │   │   │   ├── fetcher_registry.cpython-314.pyc
+│   │   │   │   ├── lightrag_adapter.cpython-310.pyc
+│   │   │   │   ├── lightrag_adapter.cpython-314.pyc
+│   │   │   │   ├── lightrag_adapter.cpython-37.pyc
+│   │   │   │   ├── parallel_runner.cpython-310.pyc
+│   │   │   │   ├── parallel_runner.cpython-314.pyc
+│   │   │   │   └── parallel_runner.cpython-37.pyc
+│   │   │   ├── fetcher_registry.py
+│   │   │   ├── lightrag_adapter.py
+│   │   │   └── parallel_runner.py
+│   │   ├── router
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── __init__.cpython-314.pyc
+│   │   │   │   ├── complexity_scorer.cpython-310.pyc
+│   │   │   │   ├── complexity_scorer.cpython-314.pyc
+│   │   │   │   ├── complexity_scorer.cpython-37.pyc
+│   │   │   │   ├── intent_classifier.cpython-310.pyc
+│   │   │   │   ├── intent_classifier.cpython-314.pyc
+│   │   │   │   └── intent_classifier.cpython-37.pyc
+│   │   │   ├── complexity_scorer.py
+│   │   │   └── intent_classifier.py
+│   │   └── synthesis
+│   │       ├── __init__.py
+│   │       ├── __pycache__
+│   │       │   ├── __init__.cpython-310.pyc
+│   │       │   ├── __init__.cpython-314.pyc
+│   │       │   ├── citation_parser.cpython-310.pyc
+│   │       │   ├── citation_parser.cpython-314.pyc
+│   │       │   ├── llm_client.cpython-310.pyc
+│   │       │   ├── llm_client.cpython-314.pyc
+│   │       │   ├── prompt_builder.cpython-310.pyc
+│   │       │   └── prompt_builder.cpython-314.pyc
+│   │       ├── citation_parser.py
+│   │       ├── llm_client.py
+│   │       └── prompt_builder.py
+│   ├── brain_module.egg-info
+│   │   ├── dependency_links.txt
+│   │   ├── PKG-INFO
+│   │   ├── requires.txt
+│   │   ├── SOURCES.txt
+│   │   └── top_level.txt
+│   ├── inputs
+│   ├── lightrag.log
+│   ├── pyproject.toml
+│   ├── questions.txt
+│   └── uv.lock
+├── conference-scraper
+│   ├── enrich_playwright.py
+│   ├── extract_table.py
+│   ├── input.html
+│   ├── main.py
+│   ├── pyproject.toml
+│   └── uv.lock
+├── conferences_enriched.csv
+├── data_module
+│   ├── CHAT_SUMMARY.md
+│   ├── config
+│   │   ├── pipeline.yaml
+│   │   ├── sources
+│   │   │   ├── hotpotqa.yaml
+│   │   │   ├── local_file.yaml
+│   │   │   ├── ms_marco.yaml
+│   │   │   ├── natural_questions.yaml
+│   │   │   ├── openassistant.yaml
+│   │   │   ├── squad.yaml
+│   │   │   ├── stackexchange.yaml
+│   │   │   ├── triviaqa.yaml
+│   │   │   ├── wikidata.yaml
+│   │   │   └── wikipedia.yaml
+│   │   └── storage.yaml
+│   ├── data
+│   │   ├── index
+│   │   │   ├── graph
+│   │   │   │   ├── graph.pkl.gz
+│   │   │   │   └── neo4j_csv
+│   │   │   │       ├── nodes.csv
+│   │   │   │       └── relationships.csv
+│   │   │   ├── pipeline_state.db
+│   │   │   └── vectors
+│   │   │       └── chunks.lance
+│   │   │           ├── _indices
+│   │   │           │   ├── cee2fbac-c0fb-4759-8af5-398db0146558
+│   │   │           │   │   ├── auxiliary.idx
+│   │   │           │   │   └── index.idx
+│   │   │           │   └── f25f9aac-27f1-42f6-ae74-2ba6a3284d94
+│   │   │           │       ├── auxiliary.idx
+│   │   │           │       └── index.idx
+│   │   │           ├── _transactions
+│   │   │           │   ├── 0-a0a38504-2b25-4a68-948c-cd36d7a643b9.txn
+│   │   │           │   ├── 1-8bb63382-bea7-4684-9964-3d7e2a502145.txn
+│   │   │           │   ├── 10-a24615ff-3714-4b33-a4bc-23c90c090484.txn
+│   │   │           │   ├── 11-2c42f7c3-5012-4232-996e-67e28e5f5ddf.txn
+│   │   │           │   ├── 12-b8bb1dfb-2b1a-4d0f-a130-e64ab78eb621.txn
+│   │   │           │   ├── 13-eb4625cf-199b-42f6-844e-94a7c4297725.txn
+│   │   │           │   ├── 14-9a72dc24-f731-4f3d-b82d-250e3f2caed2.txn
+│   │   │           │   ├── 15-c426d464-8619-48cd-a3d2-622f1806f0d8.txn
+│   │   │           │   ├── 2-ea5a880a-342a-4f8e-ba24-e91c92193d9b.txn
+│   │   │           │   ├── 3-1ed57659-3081-4a01-9ed9-12c1bbc45eed.txn
+│   │   │           │   ├── 4-82154488-c1a0-4cae-afea-4d0932b8a64e.txn
+│   │   │           │   ├── 5-079f8029-ddcc-4650-9afd-b9dde99e00c6.txn
+│   │   │           │   ├── 6-58db65c1-5040-408b-b4f0-ab1e58ecb5e2.txn
+│   │   │           │   ├── 7-a6185641-55d2-43ea-beb4-3370479c1a9f.txn
+│   │   │           │   ├── 8-ca26d3de-e506-46bf-8cae-b552832cf881.txn
+│   │   │           │   └── 9-2fa8c3e4-8310-4c1b-b3f6-d95733f9027a.txn
+│   │   │           ├── _versions
+│   │   │           │   ├── 18446744073709551599.manifest
+│   │   │           │   ├── 18446744073709551600.manifest
+│   │   │           │   ├── 18446744073709551601.manifest
+│   │   │           │   ├── 18446744073709551602.manifest
+│   │   │           │   ├── 18446744073709551603.manifest
+│   │   │           │   ├── 18446744073709551604.manifest
+│   │   │           │   ├── 18446744073709551605.manifest
+│   │   │           │   ├── 18446744073709551606.manifest
+│   │   │           │   ├── 18446744073709551607.manifest
+│   │   │           │   ├── 18446744073709551608.manifest
+│   │   │           │   ├── 18446744073709551609.manifest
+│   │   │           │   ├── 18446744073709551610.manifest
+│   │   │           │   ├── 18446744073709551611.manifest
+│   │   │           │   ├── 18446744073709551612.manifest
+│   │   │           │   ├── 18446744073709551613.manifest
+│   │   │           │   └── 18446744073709551614.manifest
+│   │   │           └── data
+│   │   │               ├── 001001001110101011000010b656a6456090915c79918c27af.lance
+│   │   │               ├── 001001111001000100011011be74314587b71fba31956ee4a8.lance
+│   │   │               ├── 00110100101000000110101060206342438eca5afb2342130b.lance
+│   │   │               ├── 001101011100001110101101bc2b0449e8a7e30e4ef6853638.lance
+│   │   │               ├── 0100110100100100000110004bf3a740469beb84bcbaa105f4.lance
+│   │   │               ├── 01110001010110111011010132b96e40a6b096936d582aa6b4.lance
+│   │   │               ├── 011110000001011100100100ccb448414cb30fa248a938b839.lance
+│   │   │               ├── 10001000100101010100100168c858499994b359c7df764b15.lance
+│   │   │               ├── 10011110101101100010000121143449a78b0d7147c3858db4.lance
+│   │   │               ├── 1010111101111101011011101277314af9b5a4e808f74b6c96.lance
+│   │   │               ├── 10110111010110000011001006a1c64b9d908be5953d79c509.lance
+│   │   │               ├── 101110110110000110111111a013c84bfcb8c6e2ebd61a7f62.lance
+│   │   │               └── 11000001111010110111010126997f4c208f84b80c3d267a99.lance
+│   │   ├── output.md
+│   │   ├── processed
+│   │   │   ├── analytics.duckdb
+│   │   │   ├── analytics.duckdb.wal
+│   │   │   ├── canonical
+│   │   │   │   ├── source=hotpotqa
+│   │   │   │   │   └── year=0
+│   │   │   │   │       ├── 0791bb6c34d64fde858b5e0d4e9ec16b-0.parquet
+│   │   │   │   │       ├── 08a162386d6d4ca6add07856f9918cc4-0.parquet
+│   │   │   │   │       ├── 1230ba3b0a3c44b5b979b571f08ce2d5-0.parquet
+│   │   │   │   │       ├── 1572cecb066641b29c54475a9a40ab14-0.parquet
+│   │   │   │   │       ├── 6ddd13e8fca84a9085eefd658490f5ab-0.parquet
+│   │   │   │   │       ├── 74428dc54a774759860b503b2f14958f-0.parquet
+│   │   │   │   │       ├── bc4773b530bb468ca3db3d2b1c4dd719-0.parquet
+│   │   │   │   │       ├── c519ab2b6b6a47abb4df9cd8b2652a44-0.parquet
+│   │   │   │   │       ├── cfd73007b752484e8d0e9d3038fe9c5f-0.parquet
+│   │   │   │   │       └── ebdc8f6755f04f6da7bdc21747f108d3-0.parquet
+│   │   │   │   ├── source=local_file
+│   │   │   │   │   └── year=0
+│   │   │   │   │       └── 905d76f44bf44a8e98a663daf6f4229e-0.parquet
+│   │   │   │   ├── source=ms_marco
+│   │   │   │   │   └── year=0
+│   │   │   │   │       ├── 209b315502c94d6986d02d3d3fb8ef8e-0.parquet
+│   │   │   │   │       ├── 4ec5054fa0734070a19c60d40df1f262-0.parquet
+│   │   │   │   │       ├── 62f5a5ed80804889bc5f3fe0eb2e117d-0.parquet
+│   │   │   │   │       ├── 686ba8f49a3a46fe95f5d34aa20ccee4-0.parquet
+│   │   │   │   │       ├── a5871a25451746aa8767892e3a1736fe-0.parquet
+│   │   │   │   │       ├── e8883a0183114c49a0198d56b32812c1-0.parquet
+│   │   │   │   │       └── f66b6716700c4989bf276bbf0f4fdba4-0.parquet
+│   │   │   │   ├── source=natural_questions
+│   │   │   │   │   └── year=0
+│   │   │   │   │       ├── 338857211d2140098c328467cd6fff11-0.parquet
+│   │   │   │   │       ├── 47ba42839466486f8bf4f3eb63109233-0.parquet
+│   │   │   │   │       └── c932bd0fc4654cd585f7d4b0ab05f21c-0.parquet
+│   │   │   │   ├── source=openassistant
+│   │   │   │   │   └── year=0
+│   │   │   │   │       └── 79e703c819ee4dd79acb10021257ff53-0.parquet
+│   │   │   │   ├── source=squad
+│   │   │   │   │   └── year=0
+│   │   │   │   │       ├── 54516f1308d047d3ba5f5d90dd120f10-0.parquet
+│   │   │   │   │       ├── e57510f3bbc942e48b7b7b3d1590c163-0.parquet
+│   │   │   │   │       └── f096af258d1943bdb48d970d5f4825bd-0.parquet
+│   │   │   │   ├── source=stackexchange
+│   │   │   │   │   ├── year=2008
+│   │   │   │   │   │   ├── 31fab2e2757d4e69a40335d065610024-0.parquet
+│   │   │   │   │   │   ├── 43cd903d699e40588557e01c47ebd344-0.parquet
+│   │   │   │   │   │   ├── 7e3aa2acb96a45cf9275484835ed94d3-0.parquet
+│   │   │   │   │   │   ├── d26c0c8013c94f0dbb5847ed42b2ad02-0.parquet
+│   │   │   │   │   │   └── d2843b07a4b7488d836d3455dd3c2c25-0.parquet
+│   │   │   │   │   ├── year=2009
+│   │   │   │   │   │   ├── 31fab2e2757d4e69a40335d065610024-0.parquet
+│   │   │   │   │   │   ├── 7e3aa2acb96a45cf9275484835ed94d3-0.parquet
+│   │   │   │   │   │   ├── 808cc4798c2e4cfd9d8b5e950f5ed219-0.parquet
+│   │   │   │   │   │   ├── abe9424f1e024be8b9eff2fc7ce9b4f0-0.parquet
+│   │   │   │   │   │   ├── b1d36d377a734ec78450e8141d11403a-0.parquet
+│   │   │   │   │   │   ├── d26c0c8013c94f0dbb5847ed42b2ad02-0.parquet
+│   │   │   │   │   │   ├── d2843b07a4b7488d836d3455dd3c2c25-0.parquet
+│   │   │   │   │   │   └── fe6c7e2e815343cdbc9d2b0dac89c0b0-0.parquet
+│   │   │   │   │   ├── year=2010
+│   │   │   │   │   │   ├── 31fab2e2757d4e69a40335d065610024-0.parquet
+│   │   │   │   │   │   ├── abe9424f1e024be8b9eff2fc7ce9b4f0-0.parquet
+│   │   │   │   │   │   ├── b1d36d377a734ec78450e8141d11403a-0.parquet
+│   │   │   │   │   │   ├── b5a04e7076314d9b8b1008625e5c747c-0.parquet
+│   │   │   │   │   │   ├── d26c0c8013c94f0dbb5847ed42b2ad02-0.parquet
+│   │   │   │   │   │   └── d2843b07a4b7488d836d3455dd3c2c25-0.parquet
+│   │   │   │   │   ├── year=2011
+│   │   │   │   │   │   ├── 31fab2e2757d4e69a40335d065610024-0.parquet
+│   │   │   │   │   │   ├── 7e3aa2acb96a45cf9275484835ed94d3-0.parquet
+│   │   │   │   │   │   ├── b1d36d377a734ec78450e8141d11403a-0.parquet
+│   │   │   │   │   │   ├── d26c0c8013c94f0dbb5847ed42b2ad02-0.parquet
+│   │   │   │   │   │   ├── d2843b07a4b7488d836d3455dd3c2c25-0.parquet
+│   │   │   │   │   │   └── fe6c7e2e815343cdbc9d2b0dac89c0b0-0.parquet
+│   │   │   │   │   ├── year=2012
+│   │   │   │   │   │   ├── 31fab2e2757d4e69a40335d065610024-0.parquet
+│   │   │   │   │   │   ├── 43cd903d699e40588557e01c47ebd344-0.parquet
+│   │   │   │   │   │   ├── 7e3aa2acb96a45cf9275484835ed94d3-0.parquet
+│   │   │   │   │   │   ├── b1d36d377a734ec78450e8141d11403a-0.parquet
+│   │   │   │   │   │   ├── d2843b07a4b7488d836d3455dd3c2c25-0.parquet
+│   │   │   │   │   │   └── fe6c7e2e815343cdbc9d2b0dac89c0b0-0.parquet
+│   │   │   │   │   ├── year=2013
+│   │   │   │   │   │   ├── 43cd903d699e40588557e01c47ebd344-0.parquet
+│   │   │   │   │   │   ├── 7e3aa2acb96a45cf9275484835ed94d3-0.parquet
+│   │   │   │   │   │   ├── 808cc4798c2e4cfd9d8b5e950f5ed219-0.parquet
+│   │   │   │   │   │   ├── abe9424f1e024be8b9eff2fc7ce9b4f0-0.parquet
+│   │   │   │   │   │   ├── b1d36d377a734ec78450e8141d11403a-0.parquet
+│   │   │   │   │   │   └── fe6c7e2e815343cdbc9d2b0dac89c0b0-0.parquet
+│   │   │   │   │   ├── year=2014
+│   │   │   │   │   │   ├── 43cd903d699e40588557e01c47ebd344-0.parquet
+│   │   │   │   │   │   ├── 7e3aa2acb96a45cf9275484835ed94d3-0.parquet
+│   │   │   │   │   │   ├── 9a6073b28e6f4a8cb5fd3fa3a528208a-0.parquet
+│   │   │   │   │   │   ├── abe9424f1e024be8b9eff2fc7ce9b4f0-0.parquet
+│   │   │   │   │   │   ├── dfeb3a48546945bbb0bf5cc216c9a04c-0.parquet
+│   │   │   │   │   │   ├── ea700c1205f7443cbe4208eb88fbe4e6-0.parquet
+│   │   │   │   │   │   └── fa7cd2a0a00c4231b25dc7a3f21bee63-0.parquet
+│   │   │   │   │   ├── year=2015
+│   │   │   │   │   │   ├── 262f77a13c564bed8cb7730ca12ea728-0.parquet
+│   │   │   │   │   │   ├── 65c24808cd054fd9acbaa32f810f0a79-0.parquet
+│   │   │   │   │   │   ├── 916e797e886445ada06a85a4d9230995-0.parquet
+│   │   │   │   │   │   ├── abe9424f1e024be8b9eff2fc7ce9b4f0-0.parquet
+│   │   │   │   │   │   ├── dfeb3a48546945bbb0bf5cc216c9a04c-0.parquet
+│   │   │   │   │   │   ├── ea700c1205f7443cbe4208eb88fbe4e6-0.parquet
+│   │   │   │   │   │   └── fa7cd2a0a00c4231b25dc7a3f21bee63-0.parquet
+│   │   │   │   │   ├── year=2016
+│   │   │   │   │   │   ├── 1386f0cdda8c450f804a0a07454c58d3-0.parquet
+│   │   │   │   │   │   ├── 262f77a13c564bed8cb7730ca12ea728-0.parquet
+│   │   │   │   │   │   ├── 640086ae29f4480c91d1b992fc63ae17-0.parquet
+│   │   │   │   │   │   ├── 65c24808cd054fd9acbaa32f810f0a79-0.parquet
+│   │   │   │   │   │   ├── 81045e1db1cd45cfa335fb97d2d2a2db-0.parquet
+│   │   │   │   │   │   ├── dfeb3a48546945bbb0bf5cc216c9a04c-0.parquet
+│   │   │   │   │   │   ├── e750a33432784a3a8424320287701cfc-0.parquet
+│   │   │   │   │   │   └── ea700c1205f7443cbe4208eb88fbe4e6-0.parquet
+│   │   │   │   │   ├── year=2017
+│   │   │   │   │   │   ├── 078f14e382464174963f169482abb5d5-0.parquet
+│   │   │   │   │   │   ├── 1386f0cdda8c450f804a0a07454c58d3-0.parquet
+│   │   │   │   │   │   ├── 262f77a13c564bed8cb7730ca12ea728-0.parquet
+│   │   │   │   │   │   ├── 272e5eae6a774e6c97095d7c8db0366e-0.parquet
+│   │   │   │   │   │   ├── 2d9ec5ca6c884bfbabb943ee3a35819e-0.parquet
+│   │   │   │   │   │   ├── 378980b29ce84d2fa5e4ccd024d33be7-0.parquet
+│   │   │   │   │   │   ├── 640086ae29f4480c91d1b992fc63ae17-0.parquet
+│   │   │   │   │   │   ├── dfeb3a48546945bbb0bf5cc216c9a04c-0.parquet
+│   │   │   │   │   │   └── ea700c1205f7443cbe4208eb88fbe4e6-0.parquet
+│   │   │   │   │   ├── year=2018
+│   │   │   │   │   │   ├── 078f14e382464174963f169482abb5d5-0.parquet
+│   │   │   │   │   │   ├── 272e5eae6a774e6c97095d7c8db0366e-0.parquet
+│   │   │   │   │   │   ├── 2d9ec5ca6c884bfbabb943ee3a35819e-0.parquet
+│   │   │   │   │   │   ├── 523162cbc1a143b1875eb0ccd28ef90b-0.parquet
+│   │   │   │   │   │   ├── 640086ae29f4480c91d1b992fc63ae17-0.parquet
+│   │   │   │   │   │   ├── 705c22d9440744a3afbbf9ee1d4d9fe0-0.parquet
+│   │   │   │   │   │   ├── af40cc1f57794396891a5edb7ca19443-0.parquet
+│   │   │   │   │   │   ├── dfeb3a48546945bbb0bf5cc216c9a04c-0.parquet
+│   │   │   │   │   │   └── ed323c6b74d5447cac7fa6108481c980-0.parquet
+│   │   │   │   │   ├── year=2019
+│   │   │   │   │   │   ├── 0b8511ec800b4b94a0a4dcb89970d3f0-0.parquet
+│   │   │   │   │   │   ├── 2d9ec5ca6c884bfbabb943ee3a35819e-0.parquet
+│   │   │   │   │   │   ├── 640086ae29f4480c91d1b992fc63ae17-0.parquet
+│   │   │   │   │   │   ├── 705c22d9440744a3afbbf9ee1d4d9fe0-0.parquet
+│   │   │   │   │   │   ├── 707d7508b6974f1490802e530dfda02f-0.parquet
+│   │   │   │   │   │   ├── 903e4e8e525943f3bc80aabf839fdb47-0.parquet
+│   │   │   │   │   │   ├── af40cc1f57794396891a5edb7ca19443-0.parquet
+│   │   │   │   │   │   └── ed323c6b74d5447cac7fa6108481c980-0.parquet
+│   │   │   │   │   ├── year=2020
+│   │   │   │   │   │   ├── 140a6bd0bad64eca8736a5da1c4a25a0-0.parquet
+│   │   │   │   │   │   ├── 2273e6f31cd54c3eb8d3786345a16a46-0.parquet
+│   │   │   │   │   │   ├── 62ebf75549d241eeb27b0e44e26abaca-0.parquet
+│   │   │   │   │   │   ├── 640086ae29f4480c91d1b992fc63ae17-0.parquet
+│   │   │   │   │   │   ├── 705c22d9440744a3afbbf9ee1d4d9fe0-0.parquet
+│   │   │   │   │   │   ├── 707d7508b6974f1490802e530dfda02f-0.parquet
+│   │   │   │   │   │   ├── 903e4e8e525943f3bc80aabf839fdb47-0.parquet
+│   │   │   │   │   │   ├── af40cc1f57794396891a5edb7ca19443-0.parquet
+│   │   │   │   │   │   ├── d43bc64917544f4fa6e2dc9c60460796-0.parquet
+│   │   │   │   │   │   └── e6bcc12da6f54578b50fd7bec2171641-0.parquet
+│   │   │   │   │   ├── year=2021
+│   │   │   │   │   │   ├── 140a6bd0bad64eca8736a5da1c4a25a0-0.parquet
+│   │   │   │   │   │   ├── 640086ae29f4480c91d1b992fc63ae17-0.parquet
+│   │   │   │   │   │   ├── 8bba1721341e4e6ab103abb7641c9a4e-0.parquet
+│   │   │   │   │   │   ├── 903e4e8e525943f3bc80aabf839fdb47-0.parquet
+│   │   │   │   │   │   ├── d26c0c8013c94f0dbb5847ed42b2ad02-0.parquet
+│   │   │   │   │   │   ├── d43bc64917544f4fa6e2dc9c60460796-0.parquet
+│   │   │   │   │   │   └── e6bcc12da6f54578b50fd7bec2171641-0.parquet
+│   │   │   │   │   ├── year=2022
+│   │   │   │   │   │   ├── 3a3f13fe497e4760a853c4f425a98444-0.parquet
+│   │   │   │   │   │   ├── 640086ae29f4480c91d1b992fc63ae17-0.parquet
+│   │   │   │   │   │   ├── 7e3aa2acb96a45cf9275484835ed94d3-0.parquet
+│   │   │   │   │   │   ├── 8bba1721341e4e6ab103abb7641c9a4e-0.parquet
+│   │   │   │   │   │   ├── 903e4e8e525943f3bc80aabf839fdb47-0.parquet
+│   │   │   │   │   │   ├── c58934b8e9e9436d8ee0a7cbd02219e7-0.parquet
+│   │   │   │   │   │   ├── d26c0c8013c94f0dbb5847ed42b2ad02-0.parquet
+│   │   │   │   │   │   └── e6bcc12da6f54578b50fd7bec2171641-0.parquet
+│   │   │   │   │   ├── year=2023
+│   │   │   │   │   │   ├── 3a3f13fe497e4760a853c4f425a98444-0.parquet
+│   │   │   │   │   │   ├── 7e3aa2acb96a45cf9275484835ed94d3-0.parquet
+│   │   │   │   │   │   ├── 903e4e8e525943f3bc80aabf839fdb47-0.parquet
+│   │   │   │   │   │   ├── b5a04e7076314d9b8b1008625e5c747c-0.parquet
+│   │   │   │   │   │   ├── d26c0c8013c94f0dbb5847ed42b2ad02-0.parquet
+│   │   │   │   │   │   ├── d2843b07a4b7488d836d3455dd3c2c25-0.parquet
+│   │   │   │   │   │   ├── dfeb3a48546945bbb0bf5cc216c9a04c-0.parquet
+│   │   │   │   │   │   └── e6bcc12da6f54578b50fd7bec2171641-0.parquet
+│   │   │   │   │   └── year=2024
+│   │   │   │   │       ├── 7e3aa2acb96a45cf9275484835ed94d3-0.parquet
+│   │   │   │   │       ├── b5a04e7076314d9b8b1008625e5c747c-0.parquet
+│   │   │   │   │       ├── d26c0c8013c94f0dbb5847ed42b2ad02-0.parquet
+│   │   │   │   │       ├── d2843b07a4b7488d836d3455dd3c2c25-0.parquet
+│   │   │   │   │       └── dfeb3a48546945bbb0bf5cc216c9a04c-0.parquet
+│   │   │   │   ├── source=triviaqa
+│   │   │   │   │   └── year=0
+│   │   │   │   │       ├── 2e1e023a0ab74f4580c6414e295e5ceb-0.parquet
+│   │   │   │   │       ├── 4c1cb0f20cd64edeb0be3f395b47c0d4-0.parquet
+│   │   │   │   │       ├── 6cc65c9fa3954576bc53fd90f3a11f67-0.parquet
+│   │   │   │   │       ├── 6d3bdf23090a4db68947f5ee107dd1c8-0.parquet
+│   │   │   │   │       ├── 8670e74e65e1431e96a446b9ac8eb76c-0.parquet
+│   │   │   │   │       ├── 9181badf670c48ea924c35164c2316d6-0.parquet
+│   │   │   │   │       └── da316eed2bf54db893a709241961f1d6-0.parquet
+│   │   │   │   └── source=wikipedia
+│   │   │   │       └── year=0
+│   │   │   │           ├── 159386e3331f4cedb10a387816889fd6-0.parquet
+│   │   │   │           ├── 2fcde74e43bd45f88230c61f6ea62ce5-0.parquet
+│   │   │   │           ├── 403e12d1981d42d19ef75a579a4cc901-0.parquet
+│   │   │   │           ├── 678ec45a94314279ac3ffc50d8e1f1a4-0.parquet
+│   │   │   │           ├── 69d53f7ffad9466a95fdd36c12648a6c-0.parquet
+│   │   │   │           ├── 84e76ea5b3f34b1db062846338f2b769-0.parquet
+│   │   │   │           ├── a4b319e7a7b2410c9abfefff42feb5f3-0.parquet
+│   │   │   │           ├── b9ac9797055345078c184c2e338bf459-0.parquet
+│   │   │   │           ├── c16bf8f936f04dbab7f294bb3af58f9b-0.parquet
+│   │   │   │           └── cbf03fa9f9454e009309355e7d4de3cd-0.parquet
+│   │   │   ├── chunks
+│   │   │   │   ├── source=hotpotqa
+│   │   │   │   │   └── year=0
+│   │   │   │   │       ├── 5de81ef1bd5b43dfb0e7b34e3421d06f-0.parquet
+│   │   │   │   │       ├── 6b8da7a019094a62b491209263ce096e-0.parquet
+│   │   │   │   │       ├── 6f83575b98a9444b8c9657954101888b-0.parquet
+│   │   │   │   │       ├── 6fb5d23364f14af0a222c774027e4c48-0.parquet
+│   │   │   │   │       ├── 8530f6aa36d246288321ac27671cab09-0.parquet
+│   │   │   │   │       ├── afba905d07204eaf9ab5a3ed8533caa8-0.parquet
+│   │   │   │   │       ├── ca09d8fa066c4b18b2406372f8b9c2a5-0.parquet
+│   │   │   │   │       ├── cd7fb382a89a4c5bb15e21332a0577d1-0.parquet
+│   │   │   │   │       ├── cf36cd6f5ed24903be2c08dc169ab260-0.parquet
+│   │   │   │   │       └── f4a28b42b330476c8e64302841932747-0.parquet
+│   │   │   │   ├── source=local_file
+│   │   │   │   │   └── year=0
+│   │   │   │   │       └── ed1cba3adbe14ea9950e2ceff1385c20-0.parquet
+│   │   │   │   ├── source=ms_marco
+│   │   │   │   │   └── year=0
+│   │   │   │   │       ├── 0721d5c259e74a1a93688d9f28f70681-0.parquet
+│   │   │   │   │       ├── 2cb78ba835a6406a8ec017532afb720b-0.parquet
+│   │   │   │   │       ├── 52efb3f4ef124b6b83152335f009af53-0.parquet
+│   │   │   │   │       ├── 5f418def77d14ae0958dcf94044e212e-0.parquet
+│   │   │   │   │       ├── 680171952f57441b9627ecac359a106a-0.parquet
+│   │   │   │   │       ├── 73658b12b11147fb85c8594450cc6e46-0.parquet
+│   │   │   │   │       └── 8910e4c2df9c4ccf929b69358abb8d5e-0.parquet
+│   │   │   │   ├── source=natural_questions
+│   │   │   │   │   └── year=0
+│   │   │   │   │       ├── 00bd9b0d3fa9490e829b5e12cd8ba038-0.parquet
+│   │   │   │   │       ├── a375e77d9b6f43888f15dd1e213e16b9-0.parquet
+│   │   │   │   │       └── c78a76a1bc8f4489b6eee99cb9196df5-0.parquet
+│   │   │   │   ├── source=openassistant
+│   │   │   │   │   └── year=0
+│   │   │   │   │       └── 61e1e463e3014c61b06451f2d42e7725-0.parquet
+│   │   │   │   ├── source=squad
+│   │   │   │   │   └── year=0
+│   │   │   │   │       ├── 8d3ffab007114319b6a6a2b0a85642e5-0.parquet
+│   │   │   │   │       ├── b43dfba57ff240b7b94fe764eaa332e2-0.parquet
+│   │   │   │   │       └── e12f092712ed4401b2efe248023823a7-0.parquet
+│   │   │   │   ├── source=stackexchange
+│   │   │   │   │   ├── year=2008
+│   │   │   │   │   │   ├── 06a1b83476524c70b81062df966311e4-0.parquet
+│   │   │   │   │   │   ├── 744612cb441e4defbe609786e90732de-0.parquet
+│   │   │   │   │   │   ├── 92d581c087654c8da4d8f503b120d4f7-0.parquet
+│   │   │   │   │   │   ├── be77f310538c47a3be7aba1de1600146-0.parquet
+│   │   │   │   │   │   └── d52970bc0708431aac9fba3372a4a84c-0.parquet
+│   │   │   │   │   ├── year=2009
+│   │   │   │   │   │   ├── 06a1b83476524c70b81062df966311e4-0.parquet
+│   │   │   │   │   │   ├── 604154add69642f5845a60a0d5e36271-0.parquet
+│   │   │   │   │   │   ├── 621d9901ad274773886fe89c69a738cd-0.parquet
+│   │   │   │   │   │   ├── 885493470781430c923b3af2b1df6d43-0.parquet
+│   │   │   │   │   │   ├── 92d581c087654c8da4d8f503b120d4f7-0.parquet
+│   │   │   │   │   │   ├── 9d0139218064442f9d88c7353cd3c73e-0.parquet
+│   │   │   │   │   │   ├── be77f310538c47a3be7aba1de1600146-0.parquet
+│   │   │   │   │   │   └── d52970bc0708431aac9fba3372a4a84c-0.parquet
+│   │   │   │   │   ├── year=2010
+│   │   │   │   │   │   ├── 06a1b83476524c70b81062df966311e4-0.parquet
+│   │   │   │   │   │   ├── 604154add69642f5845a60a0d5e36271-0.parquet
+│   │   │   │   │   │   ├── 885493470781430c923b3af2b1df6d43-0.parquet
+│   │   │   │   │   │   ├── 92d581c087654c8da4d8f503b120d4f7-0.parquet
+│   │   │   │   │   │   ├── d52970bc0708431aac9fba3372a4a84c-0.parquet
+│   │   │   │   │   │   └── f67c758ed4d44e95a3d701c4f38633e9-0.parquet
+│   │   │   │   │   ├── year=2011
+│   │   │   │   │   │   ├── 06a1b83476524c70b81062df966311e4-0.parquet
+│   │   │   │   │   │   ├── 604154add69642f5845a60a0d5e36271-0.parquet
+│   │   │   │   │   │   ├── 92d581c087654c8da4d8f503b120d4f7-0.parquet
+│   │   │   │   │   │   ├── 9d0139218064442f9d88c7353cd3c73e-0.parquet
+│   │   │   │   │   │   ├── be77f310538c47a3be7aba1de1600146-0.parquet
+│   │   │   │   │   │   └── d52970bc0708431aac9fba3372a4a84c-0.parquet
+│   │   │   │   │   ├── year=2012
+│   │   │   │   │   │   ├── 604154add69642f5845a60a0d5e36271-0.parquet
+│   │   │   │   │   │   ├── 744612cb441e4defbe609786e90732de-0.parquet
+│   │   │   │   │   │   ├── 92d581c087654c8da4d8f503b120d4f7-0.parquet
+│   │   │   │   │   │   ├── 9d0139218064442f9d88c7353cd3c73e-0.parquet
+│   │   │   │   │   │   ├── be77f310538c47a3be7aba1de1600146-0.parquet
+│   │   │   │   │   │   └── d52970bc0708431aac9fba3372a4a84c-0.parquet
+│   │   │   │   │   ├── year=2013
+│   │   │   │   │   │   ├── 604154add69642f5845a60a0d5e36271-0.parquet
+│   │   │   │   │   │   ├── 621d9901ad274773886fe89c69a738cd-0.parquet
+│   │   │   │   │   │   ├── 744612cb441e4defbe609786e90732de-0.parquet
+│   │   │   │   │   │   ├── 885493470781430c923b3af2b1df6d43-0.parquet
+│   │   │   │   │   │   ├── 9d0139218064442f9d88c7353cd3c73e-0.parquet
+│   │   │   │   │   │   └── be77f310538c47a3be7aba1de1600146-0.parquet
+│   │   │   │   │   ├── year=2014
+│   │   │   │   │   │   ├── 129dc9cda7eb450e9e4af8f27d342099-0.parquet
+│   │   │   │   │   │   ├── 4a61489742654245bfdd60712a992a4c-0.parquet
+│   │   │   │   │   │   ├── 4cbcc35b68e04aee9ac113d9de25413f-0.parquet
+│   │   │   │   │   │   ├── 744612cb441e4defbe609786e90732de-0.parquet
+│   │   │   │   │   │   ├── 835e378b6f5941f2a960e4b9308cfdbc-0.parquet
+│   │   │   │   │   │   ├── 885493470781430c923b3af2b1df6d43-0.parquet
+│   │   │   │   │   │   └── be77f310538c47a3be7aba1de1600146-0.parquet
+│   │   │   │   │   ├── year=2015
+│   │   │   │   │   │   ├── 129dc9cda7eb450e9e4af8f27d342099-0.parquet
+│   │   │   │   │   │   ├── 4cbcc35b68e04aee9ac113d9de25413f-0.parquet
+│   │   │   │   │   │   ├── 835e378b6f5941f2a960e4b9308cfdbc-0.parquet
+│   │   │   │   │   │   ├── 885493470781430c923b3af2b1df6d43-0.parquet
+│   │   │   │   │   │   ├── 94476a790dfe445195cfb4cabbb237e7-0.parquet
+│   │   │   │   │   │   ├── ab915293b5ac485cbcc9eb84be901639-0.parquet
+│   │   │   │   │   │   └── ad6cee28cb364706b688567f8938a7b6-0.parquet
+│   │   │   │   │   ├── year=2016
+│   │   │   │   │   │   ├── 129dc9cda7eb450e9e4af8f27d342099-0.parquet
+│   │   │   │   │   │   ├── 208f04e7cae643518ffd0800159da1d8-0.parquet
+│   │   │   │   │   │   ├── 4cbcc35b68e04aee9ac113d9de25413f-0.parquet
+│   │   │   │   │   │   ├── 94476a790dfe445195cfb4cabbb237e7-0.parquet
+│   │   │   │   │   │   ├── ab915293b5ac485cbcc9eb84be901639-0.parquet
+│   │   │   │   │   │   ├── b230f31f6ab7406a90907b32704a46f3-0.parquet
+│   │   │   │   │   │   ├── d14050fc8b8344a69e318bcf88b7e77f-0.parquet
+│   │   │   │   │   │   └── ea0bf1e175334016b67cb0834d46c9e0-0.parquet
+│   │   │   │   │   ├── year=2017
+│   │   │   │   │   │   ├── 129dc9cda7eb450e9e4af8f27d342099-0.parquet
+│   │   │   │   │   │   ├── 4cbcc35b68e04aee9ac113d9de25413f-0.parquet
+│   │   │   │   │   │   ├── 8b8494f8de5c430f936affee67e0dab1-0.parquet
+│   │   │   │   │   │   ├── ab915293b5ac485cbcc9eb84be901639-0.parquet
+│   │   │   │   │   │   ├── b230f31f6ab7406a90907b32704a46f3-0.parquet
+│   │   │   │   │   │   ├── d14050fc8b8344a69e318bcf88b7e77f-0.parquet
+│   │   │   │   │   │   ├── e1564b807c0740f08b83a3338a899100-0.parquet
+│   │   │   │   │   │   ├── e59c50a89da14334a78ced3740137abd-0.parquet
+│   │   │   │   │   │   └── fe624610cdfe4606943c15bdcf4a52eb-0.parquet
+│   │   │   │   │   ├── year=2018
+│   │   │   │   │   │   ├── 4cbcc35b68e04aee9ac113d9de25413f-0.parquet
+│   │   │   │   │   │   ├── 53f5bfd04ec74a7b909b273f674a90cd-0.parquet
+│   │   │   │   │   │   ├── 8423a3e6ecc04c509d54bef5a55bee10-0.parquet
+│   │   │   │   │   │   ├── a3825e3491cd4349a95437cfab2629c9-0.parquet
+│   │   │   │   │   │   ├── c27830b414e84456a3588bd651ba4cfc-0.parquet
+│   │   │   │   │   │   ├── d14050fc8b8344a69e318bcf88b7e77f-0.parquet
+│   │   │   │   │   │   ├── e1564b807c0740f08b83a3338a899100-0.parquet
+│   │   │   │   │   │   ├── e59c50a89da14334a78ced3740137abd-0.parquet
+│   │   │   │   │   │   └── fe624610cdfe4606943c15bdcf4a52eb-0.parquet
+│   │   │   │   │   ├── year=2019
+│   │   │   │   │   │   ├── 25929ea970b54daaa8560f6e0cf7c1db-0.parquet
+│   │   │   │   │   │   ├── 53f5bfd04ec74a7b909b273f674a90cd-0.parquet
+│   │   │   │   │   │   ├── 780289f7c3bc490088d90bc9eef7777d-0.parquet
+│   │   │   │   │   │   ├── 8423a3e6ecc04c509d54bef5a55bee10-0.parquet
+│   │   │   │   │   │   ├── c27830b414e84456a3588bd651ba4cfc-0.parquet
+│   │   │   │   │   │   ├── d14050fc8b8344a69e318bcf88b7e77f-0.parquet
+│   │   │   │   │   │   ├── e1564b807c0740f08b83a3338a899100-0.parquet
+│   │   │   │   │   │   └── e1801ca08afe4a25acf3c92328bdc69d-0.parquet
+│   │   │   │   │   ├── year=2020
+│   │   │   │   │   │   ├── 25929ea970b54daaa8560f6e0cf7c1db-0.parquet
+│   │   │   │   │   │   ├── 53f5bfd04ec74a7b909b273f674a90cd-0.parquet
+│   │   │   │   │   │   ├── 80aeb26afda742ec9be9ec1dc6a065c2-0.parquet
+│   │   │   │   │   │   ├── 958dccb547cd4d47bdf6cbbcd228e9a2-0.parquet
+│   │   │   │   │   │   ├── c27830b414e84456a3588bd651ba4cfc-0.parquet
+│   │   │   │   │   │   ├── d14050fc8b8344a69e318bcf88b7e77f-0.parquet
+│   │   │   │   │   │   ├── d80383d119a34f118d0a1f93a00647c5-0.parquet
+│   │   │   │   │   │   ├── de9d6070693c45eabd7ab3bbff06a461-0.parquet
+│   │   │   │   │   │   ├── e1801ca08afe4a25acf3c92328bdc69d-0.parquet
+│   │   │   │   │   │   └── e6bd8cf5c98e436d8f6f6ae6d8bd4723-0.parquet
+│   │   │   │   │   ├── year=2021
+│   │   │   │   │   │   ├── 06a1b83476524c70b81062df966311e4-0.parquet
+│   │   │   │   │   │   ├── 25929ea970b54daaa8560f6e0cf7c1db-0.parquet
+│   │   │   │   │   │   ├── 958dccb547cd4d47bdf6cbbcd228e9a2-0.parquet
+│   │   │   │   │   │   ├── d14050fc8b8344a69e318bcf88b7e77f-0.parquet
+│   │   │   │   │   │   ├── de0806a7aace464eae36d04dd9117314-0.parquet
+│   │   │   │   │   │   ├── de9d6070693c45eabd7ab3bbff06a461-0.parquet
+│   │   │   │   │   │   └── e6bd8cf5c98e436d8f6f6ae6d8bd4723-0.parquet
+│   │   │   │   │   ├── year=2022
+│   │   │   │   │   │   ├── 06a1b83476524c70b81062df966311e4-0.parquet
+│   │   │   │   │   │   ├── 25929ea970b54daaa8560f6e0cf7c1db-0.parquet
+│   │   │   │   │   │   ├── 4fdb2d8271d94ede9746a41a8187971e-0.parquet
+│   │   │   │   │   │   ├── 6c2e5d61dbc04bd98debfd76bf9c5e68-0.parquet
+│   │   │   │   │   │   ├── be77f310538c47a3be7aba1de1600146-0.parquet
+│   │   │   │   │   │   ├── d14050fc8b8344a69e318bcf88b7e77f-0.parquet
+│   │   │   │   │   │   ├── de0806a7aace464eae36d04dd9117314-0.parquet
+│   │   │   │   │   │   └── e6bd8cf5c98e436d8f6f6ae6d8bd4723-0.parquet
+│   │   │   │   │   ├── year=2023
+│   │   │   │   │   │   ├── 06a1b83476524c70b81062df966311e4-0.parquet
+│   │   │   │   │   │   ├── 25929ea970b54daaa8560f6e0cf7c1db-0.parquet
+│   │   │   │   │   │   ├── 4cbcc35b68e04aee9ac113d9de25413f-0.parquet
+│   │   │   │   │   │   ├── 6c2e5d61dbc04bd98debfd76bf9c5e68-0.parquet
+│   │   │   │   │   │   ├── be77f310538c47a3be7aba1de1600146-0.parquet
+│   │   │   │   │   │   ├── d52970bc0708431aac9fba3372a4a84c-0.parquet
+│   │   │   │   │   │   ├── e6bd8cf5c98e436d8f6f6ae6d8bd4723-0.parquet
+│   │   │   │   │   │   └── f67c758ed4d44e95a3d701c4f38633e9-0.parquet
+│   │   │   │   │   └── year=2024
+│   │   │   │   │       ├── 06a1b83476524c70b81062df966311e4-0.parquet
+│   │   │   │   │       ├── 4cbcc35b68e04aee9ac113d9de25413f-0.parquet
+│   │   │   │   │       ├── be77f310538c47a3be7aba1de1600146-0.parquet
+│   │   │   │   │       ├── d52970bc0708431aac9fba3372a4a84c-0.parquet
+│   │   │   │   │       └── f67c758ed4d44e95a3d701c4f38633e9-0.parquet
+│   │   │   │   ├── source=triviaqa
+│   │   │   │   │   └── year=0
+│   │   │   │   │       ├── 31e353ebd73846a89597506625115d4a-0.parquet
+│   │   │   │   │       ├── 65bc40f9fb6a4c45aa50efcc23beb73a-0.parquet
+│   │   │   │   │       ├── 6ab1a23abf714d7ab62d2a99457cd76b-0.parquet
+│   │   │   │   │       ├── a411f6f300cb402697031102ce912acb-0.parquet
+│   │   │   │   │       ├── a5eabb325709421eb043ab48b4d18ddc-0.parquet
+│   │   │   │   │       ├── bfa4cba9863a44bf82fb957bd137e3a2-0.parquet
+│   │   │   │   │       ├── c998d73eab55451db3cb6d9fd11fb43e-0.parquet
+│   │   │   │   │       ├── d3fdce5663714c11a061af6e1c70d520-0.parquet
+│   │   │   │   │       └── e6bc48ecc9a54881af316019ef218c66-0.parquet
+│   │   │   │   └── source=wikipedia
+│   │   │   │       └── year=0
+│   │   │   │           ├── 0323dc79bb274f07978903e6e08ac211-0.parquet
+│   │   │   │           ├── 0d592e6e37e34b409f18f4d32504a365-0.parquet
+│   │   │   │           ├── 1f32069fb91340d2bebddb0574e645f0-0.parquet
+│   │   │   │           ├── 3fbd82189aea4c878959a3d8d3b27c92-0.parquet
+│   │   │   │           ├── 4ba64efcc405469c8f763ef0268d5dc7-0.parquet
+│   │   │   │           ├── 6b5ed1bec21d474285e44fecdb82a48a-0.parquet
+│   │   │   │           ├── 938aa1ec171d4962920decf716530473-0.parquet
+│   │   │   │           ├── bcecedde95aa435eb748ac1aa29b99c3-0.parquet
+│   │   │   │           ├── dc43d690f9b94012be1797c80b1032c8-0.parquet
+│   │   │   │           └── ef5537c899a54b96b7f14142f1a69ae3-0.parquet
+│   │   │   └── pipeline_state.db
+│   │   └── raw
+│   │       ├── hotpotqa
+│   │       │   ├── train.parquet
+│   │       │   └── validation.parquet
+│   │       ├── local_file
+│   │       │   └── cqa.csv
+│   │       ├── ms_marco
+│   │       │   ├── train.parquet
+│   │       │   └── validation.parquet
+│   │       ├── openassistant
+│   │       │   ├── train.parquet
+│   │       │   └── validation.parquet
+│   │       ├── squad
+│   │       │   ├── train.parquet
+│   │       │   └── validation.parquet
+│   │       ├── stackexchange
+│   │       ├── triviaqa
+│   │       │   ├── train.parquet
+│   │       │   └── validation.parquet
+│   │       ├── wikidata
+│   │       └── wikipedia
+│   │           └── train.parquet
+│   ├── data_module
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-310.pyc
+│   │   │   └── __init__.cpython-37.pyc
+│   │   ├── fetch
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── agentic.cpython-310.pyc
+│   │   │   │   ├── base.cpython-310.pyc
+│   │   │   │   ├── fast_rag.cpython-310.pyc
+│   │   │   │   ├── graph_rag.cpython-310.pyc
+│   │   │   │   └── hybrid.cpython-310.pyc
+│   │   │   ├── agentic.py
+│   │   │   ├── base.py
+│   │   │   ├── fast_rag.py
+│   │   │   ├── graph_rag.py
+│   │   │   └── hybrid.py
+│   │   ├── pipelines
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── orchestrator.cpython-310.pyc
+│   │   │   │   └── orchestrator.cpython-37.pyc
+│   │   │   ├── chunk
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── __pycache__
+│   │   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   │   ├── chunker.cpython-310.pyc
+│   │   │   │   │   └── strategies.cpython-310.pyc
+│   │   │   │   ├── chunker.py
+│   │   │   │   └── strategies.py
+│   │   │   ├── embed
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── __pycache__
+│   │   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   │   ├── batch.cpython-310.pyc
+│   │   │   │   │   └── embedder.cpython-310.pyc
+│   │   │   │   ├── batch.py
+│   │   │   │   └── embedder.py
+│   │   │   ├── graph
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── __pycache__
+│   │   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   │   ├── builder.cpython-310.pyc
+│   │   │   │   │   └── extractor.cpython-310.pyc
+│   │   │   │   ├── builder.py
+│   │   │   │   └── extractor.py
+│   │   │   ├── ingest
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── __pycache__
+│   │   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   │   ├── loader.cpython-310.pyc
+│   │   │   │   │   └── validator.cpython-310.pyc
+│   │   │   │   ├── loader.py
+│   │   │   │   └── validator.py
+│   │   │   ├── orchestrator.py
+│   │   │   └── transform
+│   │   │       ├── __init__.py
+│   │   │       ├── __pycache__
+│   │   │       │   ├── __init__.cpython-310.pyc
+│   │   │       │   ├── deduplicator.cpython-310.pyc
+│   │   │       │   ├── enricher.cpython-310.pyc
+│   │   │       │   └── normalizer.cpython-310.pyc
+│   │   │       ├── deduplicator.py
+│   │   │       ├── enricher.py
+│   │   │       └── normalizer.py
+│   │   ├── schema
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── canonical.cpython-310.pyc
+│   │   │   │   ├── chunk.cpython-310.pyc
+│   │   │   │   ├── graph.cpython-310.pyc
+│   │   │   │   └── provenance.cpython-310.pyc
+│   │   │   ├── canonical.py
+│   │   │   ├── chunk.py
+│   │   │   ├── graph.py
+│   │   │   └── provenance.py
+│   │   ├── scripts
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── __init__.cpython-37.pyc
+│   │   │   │   ├── build_index.cpython-310.pyc
+│   │   │   │   ├── build_index.cpython-37.pyc
+│   │   │   │   ├── download_sources.cpython-310.pyc
+│   │   │   │   └── run_pipeline.cpython-310.pyc
+│   │   │   ├── build_index.py
+│   │   │   ├── download_sources.py
+│   │   │   └── run_pipeline.py
+│   │   ├── sources
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   ├── __init__.cpython-37.pyc
+│   │   │   │   ├── base.cpython-310.pyc
+│   │   │   │   └── hf_base.cpython-310.pyc
+│   │   │   ├── base.py
+│   │   │   ├── hf_base.py
+│   │   │   ├── hotpotqa
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── __pycache__
+│   │   │   │       └── __init__.cpython-310.pyc
+│   │   │   ├── local_file
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── __pycache__
+│   │   │   │       └── __init__.cpython-310.pyc
+│   │   │   ├── ms_marco
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── __pycache__
+│   │   │   │       └── __init__.cpython-310.pyc
+│   │   │   ├── natural_questions
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── __pycache__
+│   │   │   │       └── __init__.cpython-310.pyc
+│   │   │   ├── openassistant
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── __pycache__
+│   │   │   │       └── __init__.cpython-310.pyc
+│   │   │   ├── squad
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── __pycache__
+│   │   │   │       └── __init__.cpython-310.pyc
+│   │   │   ├── stackexchange
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── __pycache__
+│   │   │   │   │   ├── __init__.cpython-310.pyc
+│   │   │   │   │   ├── downloader.cpython-310.pyc
+│   │   │   │   │   ├── mapper.cpython-310.pyc
+│   │   │   │   │   └── parser.cpython-310.pyc
+│   │   │   │   ├── downloader.py
+│   │   │   │   ├── mapper.py
+│   │   │   │   └── parser.py
+│   │   │   ├── triviaqa
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── __pycache__
+│   │   │   │       └── __init__.cpython-310.pyc
+│   │   │   ├── wikidata
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── __pycache__
+│   │   │   │       ├── __init__.cpython-310.pyc
+│   │   │   │       └── __init__.cpython-37.pyc
+│   │   │   └── wikipedia
+│   │   │       ├── __init__.py
+│   │   │       └── __pycache__
+│   │   │           └── __init__.cpython-310.pyc
+│   │   └── storage
+│   │       ├── __init__.py
+│   │       ├── __pycache__
+│   │       │   ├── __init__.cpython-310.pyc
+│   │       │   ├── base.cpython-310.pyc
+│   │       │   ├── duckdb_store.cpython-310.pyc
+│   │       │   ├── graph_store.cpython-310.pyc
+│   │       │   ├── lance_store.cpython-310.pyc
+│   │       │   ├── parquet_store.cpython-310.pyc
+│   │       │   └── sqlite_store.cpython-310.pyc
+│   │       ├── base.py
+│   │       ├── duckdb_store.py
+│   │       ├── graph_store.py
+│   │       ├── lance_store.py
+│   │       ├── parquet_store.py
+│   │       └── sqlite_store.py
+│   ├── data_module.egg-info
+│   │   ├── dependency_links.txt
+│   │   ├── entry_points.txt
+│   │   ├── PKG-INFO
+│   │   ├── requires.txt
+│   │   ├── SOURCES.txt
+│   │   └── top_level.txt
+│   ├── pyproject.toml
+│   ├── README.md
+│   ├── scripts
+│   │   ├── export_to_neo4j_admin.py
+│   │   └── export_to_neo4j.py
+│   └── uv.lock
+├── FINAL_RAG_OPTIMIZATION_PLAN.md
+├── frontend
+│   ├── dist
+│   │   ├── assets
+│   │   │   ├── index-btbt39Ct.css
+│   │   │   └── index-SvYDJO0h.js
+│   │   ├── image.avif
+│   │   ├── index.html
+│   │   ├── models
+│   │   │   ├── baby_dino_ice_age_3.glb
+│   │   │   ├── dinosaur.glb
+│   │   │   └── sino_baby.glb
+│   │   └── vite.svg
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── node_modules
+│   │   ├── @eslint
+│   │   │   └── js -> ../.pnpm/@eslint+js@9.39.4/node_modules/@eslint/js
+│   │   ├── @react-three
+│   │   │   ├── drei -> ../.pnpm/@react-three+drei@10.7.7_@react-three+fiber@9.6.0_@types+react@19.2.14_react-dom@19.2.5_17e23d418ed49167eddb5f1b947e5359/node_modules/@react-three/drei
+│   │   │   └── fiber -> ../.pnpm/@react-three+fiber@9.6.0_@types+react@19.2.14_react-dom@19.2.5_react@19.2.5__react@19.2.5_three@0.181.2/node_modules/@react-three/fiber
+│   │   ├── @types
+│   │   │   ├── node -> ../.pnpm/@types+node@24.12.2/node_modules/@types/node
+│   │   │   ├── react -> ../.pnpm/@types+react@19.2.14/node_modules/@types/react
+│   │   │   └── react-dom -> ../.pnpm/@types+react-dom@19.2.3_@types+react@19.2.14/node_modules/@types/react-dom
+│   │   ├── @vitejs
+│   │   │   └── plugin-react -> ../.pnpm/@vitejs+plugin-react@5.2.0_vite@7.3.2_@types+node@24.12.2_/node_modules/@vitejs/plugin-react
+│   │   ├── boneyard-js -> .pnpm/boneyard-js@1.7.6_react@19.2.5_vite@7.3.2_@types+node@24.12.2_/node_modules/boneyard-js
+│   │   ├── eslint -> .pnpm/eslint@9.39.4/node_modules/eslint
+│   │   ├── eslint-plugin-react-hooks -> .pnpm/eslint-plugin-react-hooks@7.0.1_eslint@9.39.4/node_modules/eslint-plugin-react-hooks
+│   │   ├── eslint-plugin-react-refresh -> .pnpm/eslint-plugin-react-refresh@0.4.26_eslint@9.39.4/node_modules/eslint-plugin-react-refresh
+│   │   ├── framer-motion -> .pnpm/framer-motion@12.38.0_react-dom@19.2.5_react@19.2.5__react@19.2.5/node_modules/framer-motion
+│   │   ├── globals -> .pnpm/globals@16.5.0/node_modules/globals
+│   │   ├── react -> .pnpm/react@19.2.5/node_modules/react
+│   │   ├── react-dom -> .pnpm/react-dom@19.2.5_react@19.2.5/node_modules/react-dom
+│   │   ├── react-simple-keyboard -> .pnpm/react-simple-keyboard@3.8.189_react-dom@19.2.5_react@19.2.5__react@19.2.5/node_modules/react-simple-keyboard
+│   │   ├── react-speech-recognition -> .pnpm/react-speech-recognition@4.0.1_react@19.2.5/node_modules/react-speech-recognition
+│   │   ├── simple-keyboard-layouts -> .pnpm/simple-keyboard-layouts@3.4.193/node_modules/simple-keyboard-layouts
+│   │   ├── three -> .pnpm/three@0.181.2/node_modules/three
+│   │   ├── typescript -> .pnpm/typescript@5.9.3/node_modules/typescript
+│   │   ├── typescript-eslint -> .pnpm/typescript-eslint@8.58.2_eslint@9.39.4_typescript@5.9.3/node_modules/typescript-eslint
+│   │   └── vite -> .pnpm/vite@7.3.2_@types+node@24.12.2/node_modules/vite
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── pnpm-lock.yaml
+│   ├── public
+│   │   ├── image.avif
+│   │   ├── models
+│   │   └── vite.svg
+│   ├── README.md
+│   ├── src
+│   │   ├── App.css
+│   │   ├── App.tsx
+│   │   ├── assets
+│   │   │   └── react.svg
+│   │   ├── bones
+│   │   │   └── registry.ts
+│   │   ├── components
+│   │   │   ├── AnswerCard.tsx
+│   │   │   ├── Avatar.tsx
+│   │   │   ├── ChatInput.tsx
+│   │   │   ├── ChatThread.tsx
+│   │   │   ├── DinoAnimation.tsx
+│   │   │   ├── DinoEmbed.tsx
+│   │   │   ├── MessageList.tsx
+│   │   │   ├── ProcessingIndicator.tsx
+│   │   │   ├── PromptBar.tsx
+│   │   │   ├── Sidebar.tsx
+│   │   │   ├── SourceGlyph.tsx
+│   │   │   └── SourceIcon.tsx
+│   │   ├── config.ts
+│   │   ├── contexts
+│   │   │   ├── ThemeContext.tsx
+│   │   │   └── UiModeContext.tsx
+│   │   ├── devMockPayload.ts
+│   │   ├── hooks
+│   │   │   ├── useMicPipeline.ts
+│   │   │   └── useSpeech.ts
+│   │   ├── index.css
+│   │   ├── lib
+│   │   │   └── dataSourceType.ts
+│   │   ├── main.tsx
+│   │   └── types
+│   │       └── speech.d.ts
+│   ├── tsconfig.app.json
+│   ├── tsconfig.json
+│   ├── tsconfig.node.json
+│   └── vite.config.ts
+├── helper.txt
+├── LICENSE
+├── lightrag_data
+│   ├── kv_store_llm_response_cache.json
+│   └── PLACEHOLDER
+├── observability
+│   ├── __pycache__
+│   │   └── dashboard.cpython-37.pyc
+│   ├── dashboard.py
+│   ├── README.md
+│   └── requirements.txt
+├── output.md
+├── paper_notes
+│   ├── 00_overview.md
+│   ├── 01_data_sources.md
+│   ├── 02_storage_architecture.md
+│   ├── 03_retrieval_strategies.md
+│   ├── 04_brain_architecture.md
+│   ├── 05_framework_analysis.md
+│   ├── 06_multi_source_response_format.md
+│   ├── 07_evaluation_plan.md
+│   ├── 08_open_questions.md
+│   ├── 09_project_updates_log.md
+│   └── README.md
+├── RAG Pipeline Optimization.pdf
+├── RAG_LAYOUT_REVIEW.md
+├── rag-metrics-runner
+│   ├── ITRLM Registration.docx
+│   ├── main.py
+│   ├── metrics_runner.py
+│   ├── metrics_snapshot.json
+│   ├── metrics.md
+│   ├── pyproject.toml
+│   ├── README.md
+│   └── uv.lock
+├── README.md
+├── record
+│   ├── __init__.py
+│   ├── __main__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-310.pyc
+│   │   └── recorder.cpython-310.pyc
+│   ├── recorder.py
+│   └── requirements.txt
+├── requirements.txt
+├── scripts
+│   ├── cli_voice_query.py
+│   ├── run_brain_module.sh
+│   ├── run_frontend.sh
+│   ├── run_lightrag.sh
+│   └── special_commands.sh
+└── start_services.sh
+
+225 directories, 780 files

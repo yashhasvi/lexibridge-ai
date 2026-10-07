@@ -1,0 +1,4 @@
+[console_scripts]
+data-download = data_module.scripts.download_sources:app
+data-index = data_module.scripts.build_index:app
+data-pipeline = data_module.scripts.run_pipeline:app

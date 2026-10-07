@@ -1,0 +1,32 @@
+# CSV / JSON under data/raw/local_file/ → full pipeline (Parquet, LanceDB, graph, …).
+#
+# Add files:
+#   1. Drop *.csv / *.json into data/raw/local_file/, or
+#   2. List them in extra_import (paths relative to this YAML file's directory).
+#
+# Column mapping below matches CQA-style CSV (qid, subject, body, category, answer, topic, keywords).
+# For other shapes, adjust column_mapping to match your headers / JSON keys.
+
+local_file:
+  # Copy bundled samples (if present under data_module/sample_data/ in the package)
+  seed_files: []
+
+  # Repo-relative imports (from config/sources/ → ../../../ = monorepo root)
+  extra_import:
+    - ../../../Optimizing-Question-Retrieval-in-CQA-System-Through-Metadata/data/cqa.csv
+
+  column_mapping:
+    id_column: qid
+    title_column: subject
+    body_column: body
+    answer_column: answer
+    tag_columns:
+      - category
+      - topic
+    keywords_column: keywords
+
+  license: unknown
+  language: en
+
+  # Set true to re-copy seed/extra_import files even when raw dir already has data
+  force_reseed: false

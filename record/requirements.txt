@@ -1,0 +1,7 @@
+# Microphone capture (requires PortAudio)
+# macOS:  brew install portaudio
+# Debian: sudo apt install libportaudio2
+sounddevice>=0.4.6
+soundfile>=0.12.1
+# numpy is already a transitive dep of openai-whisper; listed here for clarity
+numpy>=1.24

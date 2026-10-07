@@ -1,0 +1,5 @@
+# Speech-to-text + language detection (requires ffmpeg on PATH)
+# https://github.com/openai/whisper
+openai-whisper>=20231117
+# Silence-based audio chunking for the mixed-language pipeline
+pydub>=0.25.1

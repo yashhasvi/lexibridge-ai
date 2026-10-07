@@ -1,90 +1,99 @@
 # 🚀 MultiRAG-QA
 
-## Multi-Source Retrieval-Augmented Question Answering with Knowledge Graph Reasoning
+**Multi-Source Retrieval-Augmented Question Answering with Knowledge Graph Reasoning**
 
 ---
 
-# 📌 Overview
+## 📌 Overview
 
-MultiRAG-QA is an end-to-end Community Question Answering (CQA) retrieval and generation system designed to overcome the lexical gap, multi-hop reasoning challenges, and lack of attribution in traditional QA systems.
+**MultiRAG-QA** is an end-to-end **Community Question Answering (CQA) retrieval and generation system** designed to overcome the **lexical gap, multi-hop reasoning challenges, and lack of attribution** in traditional QA systems.
 
 Unlike conventional RAG systems that rely on a single retrieval method, this project combines:
 
-- 🔍 Multiple retrieval strategies
-- 🧠 Knowledge Graph reasoning
-- ⚡ Parallel retrieval + fusion
-- 📚 Multi-source attribution with citations
+* 🔍 Multiple retrieval strategies
+* 🧠 Knowledge Graph reasoning
+* ⚡ Parallel retrieval + fusion
+* 📚 Multi-source attribution with citations
 
-The result is a highly accurate, explainable, and scalable QA system.
-
----
-
-# 🎯 Key Features
-
-## 🔄 Multi-Strategy Retrieval
-
-- Dense semantic search (ANN)
-- Keyword-based search (BM25)
-- Graph-based retrieval (Neo4j)
-- Knowledge Graph retrieval (LightRAG)
-
-👉 These strategies run in parallel and are fused using Reciprocal Rank Fusion (RRF) for better accuracy.
-
-## 🧠 Knowledge Graph Augmentation
-
-- Uses entity relationships (tags, duplicates, mentions)
-- Enables multi-hop reasoning
-- Connects information across different sources
-
-## ⚡ Intelligent Query Routing
-
-Classifies queries into:
-
-- Factual
-- Conceptual
-- Technical
-- Multi-hop
-
-Activates only required retrieval strategies → reduces latency
-
-## 📊 Cross-Encoder Re-ranking
-
-Improves precision by re-ranking top candidates
-
-Uses models like:
-
-- bge-reranker
-- MiniLM
-
-## 📝 Multi-Source Answer Generation
-
-Synthesizes answers using LLM
-
-Provides:
-
-- ✅ Inline citations [1][2]
-- ✅ Source attribution
-- ✅ Confidence score
-
-## 🛡️ Guardrails & Reliability
-
-- Retrieval filtering
-- Prompt constraints
-- Post-generation validation
-- Prevents hallucinations and contradictions
-
-## ⚡ Performance Optimizations
-
-- Query rewriting (improves recall)
-- Context compression (reduces token usage)
-- Embedding cache + semantic cache
-- Tiered LLM routing (fast + large models)
+The result is a **highly accurate, explainable, and scalable QA system**. 
 
 ---
 
-# 🏗️ System Architecture
+## 🎯 Key Features
 
-```text
+### 🔄 Multi-Strategy Retrieval
+
+* Dense semantic search (ANN)
+* Keyword-based search (BM25)
+* Graph-based retrieval (Neo4j)
+* Knowledge Graph retrieval (LightRAG)
+
+👉 These strategies run in **parallel** and are fused using **Reciprocal Rank Fusion (RRF)** for better accuracy. 
+
+---
+
+### 🧠 Knowledge Graph Augmentation
+
+* Uses entity relationships (tags, duplicates, mentions)
+* Enables **multi-hop reasoning**
+* Connects information across different sources
+
+---
+
+### ⚡ Intelligent Query Routing
+
+* Classifies queries into:
+
+  * Factual
+  * Conceptual
+  * Technical
+  * Multi-hop
+* Activates only required retrieval strategies → **reduces latency**
+
+---
+
+### 📊 Cross-Encoder Re-ranking
+
+* Improves precision by re-ranking top candidates
+* Uses models like:
+
+  * `bge-reranker`
+  * `MiniLM`
+
+---
+
+### 📝 Multi-Source Answer Generation
+
+* Synthesizes answers using LLM
+* Provides:
+
+  * ✅ Inline citations `[1][2]`
+  * ✅ Source attribution
+  * ✅ Confidence score
+
+---
+
+### 🛡️ Guardrails & Reliability
+
+* Retrieval filtering
+* Prompt constraints
+* Post-generation validation
+* Prevents hallucinations and contradictions 
+
+---
+
+### ⚡ Performance Optimizations
+
+* Query rewriting (improves recall)
+* Context compression (reduces token usage)
+* Embedding cache + semantic cache
+* Tiered LLM routing (fast + large models) 
+
+---
+
+## 🏗️ System Architecture
+
+```
 User Query
     ↓
 Query Router (intent + complexity)
@@ -106,16 +115,16 @@ LLM Synthesis (with citations)
 BrainResponse Output
 ```
 
-👉 The system is built as two main modules:
+👉 The system is built as **two main modules**:
 
-- `data_module/` → ingestion, storage, retrieval
-- `brain_module/` → reasoning, ranking, synthesis
+* `data_module/` → ingestion, storage, retrieval
+* `brain_module/` → reasoning, ranking, synthesis 
 
 ---
 
-# 🗂️ Project Structure
+## 🗂️ Project Structure
 
-```text
+```
 MultiRAG-QA/
 │
 ├── data_module/
@@ -128,7 +137,7 @@ MultiRAG-QA/
 │   ├── retrieval/         # Parallel fetch execution
 │   ├── aggregation/       # RRF fusion
 │   ├── reranking/         # Cross-encoder models
-│   ├── synthesis/         # LLM answer generation
+│  ├── synthesis/         # LLM answer generation
 │   ├── guardrails/        # Validation layers
 │   ├── cache/             # Query & embedding cache
 │   ├── api/               # FastAPI endpoints
@@ -140,174 +149,177 @@ MultiRAG-QA/
 
 ---
 
-# 📚 Data Sources
+## 📚 Data Sources
 
-The system integrates 9 open datasets into a unified schema:
+The system integrates **9 open datasets** into a unified schema:
 
-- Stack Exchange
-- Wikipedia
-- SQuAD 2.0
-- Natural Questions
-- MS MARCO
-- HotpotQA
-- TriviaQA
-- OpenAssistant
-- Wikidata
+* Stack Exchange
+* Wikipedia
+* SQuAD 2.0
+* Natural Questions
+* MS MARCO
+* HotpotQA
+* TriviaQA
+* OpenAssistant
+* Wikidata
 
-All are normalized into a CanonicalQA schema for unified retrieval.
-
----
-
-# 🗄️ Storage Architecture
-
-Uses 5 specialized backends:
-
-| Backend | Purpose |
-|---|---|
-| Parquet | Cold storage |
-| DuckDB | Analytics |
-| LanceDB | Vector search |
-| SQLite | Metadata + dedup |
-| Neo4j | Knowledge graph |
-
-👉 Each backend handles a specific workload efficiently.
+All are normalized into a **CanonicalQA schema** for unified retrieval. 
 
 ---
 
-# 📊 Evaluation
+## 🗄️ Storage Architecture
 
-The system is evaluated using RAGAS metrics:
+Uses **5 specialized backends**:
 
-- Faithfulness
-- Answer Relevancy
-- Context Precision
-- Context Recall
+| Backend | Purpose          |
+| ------- | ---------------- |
+| Parquet | Cold storage     |
+| DuckDB  | Analytics        |
+| LanceDB | Vector search    |
+| SQLite  | Metadata + dedup |
+| Neo4j   | Knowledge graph  |
+
+👉 Each backend handles a **specific workload efficiently**. 
+
+---
+
+## 📊 Evaluation
+
+The system is evaluated using **RAGAS metrics**:
+
+* Faithfulness
+* Answer Relevancy
+* Context Precision
+* Context Recall
 
 Also benchmarked on:
 
-- SQuAD
-- HotpotQA
-- Natural Questions
+* SQuAD
+* HotpotQA
+* Natural Questions
 
-👉 Focus: multi-source + multi-hop performance improvement
+👉 Focus: **multi-source + multi-hop performance improvement** 
 
 ---
 
-# ⚙️ Setup Instructions
+## ⚙️ Setup Instructions
 
-## 1️⃣ Clone the repository
+### 1️⃣ Clone the repository
 
 ```bash
 git clone https://github.com/your-repo/multirag-qa.git
 cd multirag-qa
 ```
 
-## 2️⃣ Install dependencies
+### 2️⃣ Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 3️⃣ Start backend
+### 3️⃣ Start backend
 
 ```bash
 cd brain_module
 uvicorn api.main:app --reload
 ```
 
-## 4️⃣ Open frontend
+### 4️⃣ Open frontend
 
-```text
+```
 http://localhost:5173
 ```
 
 ---
 
-# 🚀 API Usage
+## 🚀 API Usage
 
-## Ask a question
+### Ask a question
 
-```text
+```bash
 POST /ask
 ```
 
-## Streaming response
+### Streaming response
 
-```text
+```bash
 POST /ask/stream
 ```
 
 Returns:
 
-- Answer with citations
-- Sources
-- Confidence
-- Retrieval trace
+* Answer with citations
+* Sources
+* Confidence
+* Retrieval trace
 
 ---
 
-# 📈 Performance Snapshot
+## 📈 Performance Snapshot
 
-- ⏱ Avg latency: ~14.7s (CPU environment)
-- 📊 Avg confidence: ~0.82
-- 📚 Avg sources: 2.4
-- ⚡ Cache hit rate: 20%
+* ⏱ Avg latency: ~14.7s (CPU environment)
+* 📊 Avg confidence: ~0.82
+* 📚 Avg sources: 2.4
+* ⚡ Cache hit rate: 20%
 
-👉 Performance improves significantly with GPU + caching.
-
----
-
-# 🔬 Research Contributions
-
-- Multi-strategy retrieval fusion
-- KG-augmented multi-source RAG
-- Structured citation-based responses
-- Query-aware retrieval routing
-- Guardrail-based reliability system
+👉 Performance improves significantly with GPU + caching. 
 
 ---
 
-# ⚠️ Limitations
+## 🔬 Research Contributions
 
-- No real-time updates (static dataset)
-- English-only (currently)
-- BM25 index rebuild on startup
-- Wikidata entity linking incomplete
-
-👉 These are active areas for improvement.
-
----
-
-# 🔮 Future Work
-
-- Multilingual support
-- User feedback loop
-- DSPy-based optimization
-- Wikidata entity linking
-- RAG-Anything (multimodal support)
+* Multi-strategy retrieval fusion
+* KG-augmented multi-source RAG
+* Structured citation-based responses
+* Query-aware retrieval routing
+* Guardrail-based reliability system
 
 ---
 
-# 📄 License
+## ⚠️ Limitations
 
-This project uses open datasets (CC BY-SA, Apache 2.0, CC0). Ensure attribution when redistributing derived data.
+* No real-time updates (static dataset)
+* English-only (currently)
+* BM25 index rebuild on startup
+* Wikidata entity linking incomplete
 
----
-
-# 🤝 Contributors
-
-This is a group project developed as part of research in:
-
-- Multi-source QA
-- Retrieval-Augmented Generation
-- Knowledge Graph reasoning
+👉 These are active areas for improvement. 
 
 ---
 
-# ⭐ Final Note
+## 🔮 Future Work
 
-This system is designed not just to answer questions, but to:
+* Multilingual support
+* User feedback loop
+* DSPy-based optimization
+* Wikidata entity linking
+* RAG-Anything (multimodal support)
 
-✔ Explain why the answer is correct  
-✔ Show where it came from  
-✔ Handle complex real-world queries
+---
+
+## 📄 License
+
+This project uses **open datasets (CC BY-SA, Apache 2.0, CC0)**.
+Ensure attribution when redistributing derived data.
+
+---
+
+## 🤝 Contributors
+
+This is a **group project** developed as part of research in:
+
+* Multi-source QA
+* Retrieval-Augmented Generation
+* Knowledge Graph reasoning
+
+---
+
+## ⭐ Final Note
+
+This system is designed not just to **answer questions**, but to:
+
+✔ Explain *why* the answer is correct
+✔ Show *where* it came from
+✔ Handle *complex real-world queries*
+
+---

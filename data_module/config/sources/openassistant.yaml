@@ -1,0 +1,18 @@
+openassistant:
+  # Human-annotated conversation trees — Apache 2.0 license
+  huggingface_id: "OpenAssistant/oasst2"
+  splits:
+    - train
+    - validation
+  # Fields: message_id, parent_id, role (prompter/assistant), text,
+  #         lang, rank, labels (quality/toxicity), message_tree_id
+  include_languages:           # empty = all languages
+    - en
+    - de
+    - es
+    - fr
+    - zh
+  min_quality_score: 0.5       # filter low-quality messages (0-1 scale)
+  max_toxicity_score: 0.3      # filter toxic messages
+  license: "apache-2.0"
+  attribution_template: "https://huggingface.co/datasets/OpenAssistant/oasst2"

@@ -1,0 +1,11 @@
+squad:
+  # SQuAD 2.0 — reading comprehension over Wikipedia paragraphs
+  # CC BY-SA 4.0 license
+  huggingface_id: "rajpurkar/squad_v2"
+  splits:
+    - train
+    - validation
+  # Fields: id, title, context, question, answers (list of {text, answer_start})
+  include_unanswerable: true   # SQuAD 2.0 has ~50k unanswerable questions
+  license: "cc-by-sa-4.0"
+  attribution_template: "https://rajpurkar.github.io/SQuAD-explorer/"

@@ -1,0 +1,54 @@
+{
+    "environment": {
+      "hardware": "Apple M1 Pro",
+      "notes": "CPU-bound inference, no GPU acceleration"
+    },
+    "run_summary": {
+      "num_queries": 5,
+      "latency_ms": {
+        "avg": 14689.26,
+        "min": 4618.40,
+        "max": 25911.90
+      },
+      "confidence": {
+        "avg": 0.8258,
+        "notes": "Values may exceed 1.0; not calibrated"
+      },
+      "sources": {
+        "avg": 2.4
+      },
+      "cache": {
+        "hit_rate": 0.20
+      },
+      "guardrails": {
+        "low_alignment_rate": 0.60
+      }
+    },
+    "distribution": {
+      "intent": {
+        "factual": 2,
+        "multi_hop": 2,
+        "unknown": 1
+      },
+      "model_used": {
+        "gemma4:e4b": 5
+      },
+      "reranker_used": {
+        "cross-encoder/ms-marco-MiniLM-L-6-v2": 5
+      }
+    },
+    "interpretation": {
+      "latency": "High due to CPU-bound inference and reranking; architecture not the bottleneck",
+      "confidence": "Not normalized; requires calibration",
+      "retrieval": "Low source count may impact multi-hop reasoning",
+      "cache": "Low hit rate; optimization opportunity",
+      "guardrails": "High low_alignment rate indicates weak grounding"
+    },
+    "action_items": [
+      "Normalize confidence scores to [0,1]",
+      "Improve retrieval depth (increase top_k or hybrid retrieval)",
+      "Optimize cache (semantic matching)",
+      "Reduce reranker usage or make conditional",
+      "Improve grounding to reduce guardrail failures"
+    ]
+  }

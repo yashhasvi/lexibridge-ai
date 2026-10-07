@@ -1,0 +1,7 @@
+streamlit>=1.36
+plotly>=5.22
+pandas>=2.0
+duckdb>=0.10
+pyyaml>=6.0
+networkx>=3.2
+lancedb>=0.6

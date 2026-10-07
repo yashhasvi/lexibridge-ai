@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: brain_module
+Version: 0.1.0
+Summary: Multi-source Q&A reasoning and synthesis layer over data_module
+Requires-Python: >=3.10
+Requires-Dist: sentence-transformers>=2.6.1
+Requires-Dist: torch>=2.2.2
+Requires-Dist: httpx>=0.27.0
+Requires-Dist: aiohttp>=3.9.5
+Requires-Dist: fastapi>=0.111.0
+Requires-Dist: uvicorn[standard]>=0.30.0
+Requires-Dist: sse-starlette>=2.1.0
+Requires-Dist: openai>=1.35.0
+Requires-Dist: litellm>=1.40.0
+Requires-Dist: langdetect>=1.0.9
+Requires-Dist: pydantic>=2.7.0
+Requires-Dist: tenacity>=8.3.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: redis>=5.0.4
+Requires-Dist: ragas>=0.1.14
+Requires-Dist: datasets>=2.19.0
+Requires-Dist: lightrag-hku[api]>=1.4.14
+Requires-Dist: pyjwt>=2.12.1
+Requires-Dist: bcrypt>=5.0.0
+Requires-Dist: ollama>=0.6.1
+Requires-Dist: neo4j>=6.1.0
+Requires-Dist: data-module
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.23; extra == "dev"
+Requires-Dist: httpx>=0.27.0; extra == "dev"
+Provides-Extra: audio
+Requires-Dist: openai-whisper>=20231117; extra == "audio"
+Requires-Dist: pydub>=0.25.1; extra == "audio"
+Requires-Dist: edge-tts>=7.0; extra == "audio"
